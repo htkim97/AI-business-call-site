@@ -1,0 +1,223 @@
+$ruler:16px;
+$color-red:#AE1100;
+$color-shadow:#aaaaac;
+$color-white:#FFF;
+$color-bg: #EBECF0;
+$fuschia: #f7d883;
+$button-bg: $fuschia;
+$btn-size: 56px;
+
+
+
+html{
+    -webkit-text-size-adjust: none;
+}
+
+
+/* 발신번호 검색 */
+
+
+ .s_from2 {
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:15px;
+  width: 110px;
+  height: 20px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px  $color-shadow, inset -1px -1px 2px  $color-shadow;
+    outline: none;
+  }
+}
+
+
+
+.s_from3 {
+    float: right;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:13px;
+  width: 110px;
+  height: 20px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px  $color-shadow, inset -1px -1px 2px  $color-shadow;
+    outline: none;
+  }
+}
+
+
+
+.s_from4 {
+    float: right;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:14px;
+  width: 270px;
+  height: 30px;
+  box-sizing: border-box;
+  outline: none;
+  margin-top: -2%;
+  
+  
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px  $color-shadow, inset -1px -1px 2px  $color-shadow;
+    outline: none;
+  }
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* 드롭다운 */
+.drop1 {
+    width: 160px;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  height: 20px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:15px;
+  width: 110px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+.drop2 {
+    width: 160px;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  height: 20px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:15px;
+  width: 110px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+.drop3 {
+    width: 160px;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  height: 20px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:15px;
+  width: 110px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+.drop4 {
+    width: 160px;
+    float: right;
+    box-shadow:  inset 2px 2px 5px $color-shadow,     inset -5px -5px 10px $color-white;
+  
+  border-radius: 5px;
+  height: 20px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size:15px;
+  width: 110px;
+  box-sizing: border-box;
+  outline: none;
+ 
+  &:focus {
+    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  }
+}
+
+
+
+
+/* calendarRange */
+
+.range_dates {
+    float: right;
+    margin-top: -10px;
+    font-size:15px;
+    width: 270px;
+    
+    
+
+
+
+}
+
+
+
+.icons{
+
+    display: flex;
+    float: right;
+    margin-left: -20%;
+  
+    margin-top: -4%;
+
+  
+
+}
+.checkbox{
+    margin-left: 10%;
+
+    font-size: 11px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+.excelButton{
+  width: 10%;
+  height: 40px;
+  margin-left: 90%;
+  margin-bottom: 3%;
+}

@@ -1,0 +1,19 @@
+**실행순서 (개발환경)**
+1. npm install
+2. npm start
+
+**빌드 후 실행 (개발환경)**
+1. npm run build
+2. npx serve -s build => 포트 설정 (npm serve -l **** -s build)
+
+**pm2** 
+
+개발용(run.front.sh), 이전버전(run.demo.sh) => pm2 list로 관리
+
+1. pm2 start "run.front.sh" (pm2 list에 서버 활성화) 
+=>  pm2 stop "run.front.sh" (pm2 list에 서버 비활성화) 
+
+2. pm2 start "run.demo.sh" (pm2 list에 서버 활성화) 
+=>  pm2 stop "run.demo.sh" (pm2 list에 서버 비활성화) 
+
+3. pm2 save (현재의 pm2 list 저장하여 재부팅 시 자동 실행되게 함)

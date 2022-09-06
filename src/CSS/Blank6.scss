@@ -1,0 +1,362 @@
+$color-shadow: #aaaaac;
+$color-white: #FFF;
+$ruler: 16px;
+$mainC: rgb(251, 184, 119);
+
+
+
+
+
+
+//라인
+.line_6 {
+  width: 90%;
+
+}
+
+
+// 6페이지 검색 기능 파트
+
+.addStaff {
+  font-size: 15px;
+  width: 5%;
+  height: 28px;
+  border-radius: 10px;
+  margin-right: 4%;
+  background-color: $mainC;
+  color: rgb(255, 255, 255);
+}
+
+// .SearchBtn_1{
+
+
+// }
+// .SearchBtn_2{
+
+// }
+// .SearchBtn_3{
+
+// }
+
+
+
+
+
+//검색 창
+.form-control_S {
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+
+  border-radius: 5px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 13px;
+  width: 680px;
+  height: 27px;
+  box-sizing: border-box;
+  outline: none;
+  margin-left: 10%;
+
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-shadow;
+    outline: none;
+  }
+
+}
+
+
+// 그리드
+
+.changs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2%;
+  margin-left: -13%;
+
+
+
+
+
+
+}
+
+.page1 {
+  box-shadow: 1px 1px 6px $color-shadow;
+  border-radius: 10px;
+  width: 45rem;
+  height: 25rem;
+  
+
+}
+
+.page2 {
+  box-shadow: 1px 1px 6px $color-shadow;
+  border-radius: 10px;
+  width: 45rem;
+  height: 25rem;
+
+}
+
+.page3 {
+  box-shadow: 1px 1px 6px $color-shadow;
+  border-radius: 10px;
+  width: 45rem;
+  height: auto;
+}
+
+
+.page4 {
+  box-shadow: 1px 1px 6px $color-shadow;
+  border-radius: 10px;
+  width: 45rem;
+  height: 10rem;
+
+}
+
+
+//tab 메뉴
+
+
+
+.tabM {
+  width: 90%;
+  margin: 6%;
+  visibility: " ";
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  background: #ededed83;
+  color: #222;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.tab-content {
+  display: none;
+  background: #ededed83;
+  padding: 15px;
+
+
+}
+
+#tab-1,
+#tab-2,
+#tab-3 {
+  height: 35rem;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+
+
+
+
+//   첫번째 그리드 테이블
+.container{
+  height: auto;
+}
+
+.container_2{
+  
+}
+
+
+
+// 그리드 2
+
+
+//전화 탭
+
+.listData1 {
+  margin: 8%;
+
+
+}
+
+.phone_chang {
+  margin: 1%;
+}
+
+.userF {
+  font-size: 10rem;
+  margin-left: 37%;
+  box-shadow: 3px 5px 10px black;
+  border-radius: 140px;
+
+}
+
+.listData2 {
+  margin-left: 46%;
+  margin-bottom: 10%;
+  font-size: 20px;
+}
+
+.listData3 {
+  margin-left: 44%;
+  margin-top: 8%;
+  
+}
+
+.jeonhwa_1 {
+  font-size: 30px;
+  width: 25%;
+  
+  background-color: rgba(245, 245, 220, 0.614);
+  color: rgb(234, 173, 112);
+  border-radius: 10px;
+  box-shadow: 1px 4px 4px rgb(251, 184, 119);
+  margin-left: 5%;
+}
+
+
+.jeonhwa_2 {
+  font-size: 4rem;
+  margin-left: 29%;
+  width: 40%;
+}
+
+
+// 메세지 탭
+
+.message_chang {
+  margin: 5%;
+}
+
+.send_btn {
+  margin-left: 90%;
+  width: 15%;
+  height: 15%;
+}
+
+// 첫번째 그리드 클릭 버튼
+
+
+
+
+//그리드 테이블
+
+
+
+// 편집 // 등록
+
+
+.Upload_btn {
+  float: right;
+  margin-right: 6%;
+  margin-top: 2%;
+  border-radius: 5px;
+  width: 10%;
+  
+  
+
+}
+
+.edit_btn {
+  margin-left: 80%;
+  border-radius: 3px;
+  box-shadow: 1px 3px 4px black;
+  width: 8%;
+}
+
+
+
+// 버튼
+
+.btn-default {
+  margin-left: 75%;
+}
+
+.btn-primary {
+  float: right;
+}
+
+
+
+// 편집 input
+
+
+.form-control {
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+
+  border-radius: 5px;
+  border: $ruler;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 13px;
+
+  height: 25px;
+  box-sizing: border-box;
+  outline: none;
+  margin: 2%;
+
+
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-shadow;
+    outline: none;
+  }
+
+
+
+}
+
+
+// 히든 탭
+
+.hiddenData {
+  visibility: collapse;
+}
+
+
+.uploadChang {
+  visibility: collapse;
+  
+
+}
+
+
+
+
+.hidden_tab {
+  margin: 5%;
+  width: 80%;
+}
+
+.cancelBtn {
+  float: right;
+  width: 10%;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 3px 7px 9px black;
+  
+
+
+  &:hover {
+    transition: 1s;
+    transform: translateY(3px);
+    box-shadow: 1px 4px 5px;
+
+  }
+}
+
+.Delete_btn{
+  float: right;
+}
+

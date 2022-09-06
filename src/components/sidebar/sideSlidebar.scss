@@ -1,0 +1,219 @@
+
+
+
+
+
+.sidebar-navigation {
+
+
+	background-color: white;
+    width: 10%;
+    height: auto;
+    margin-left: -22%;
+    margin-top: 2%;
+    position: absolute;
+   
+	
+	
+	ul {
+		text-align: center;
+        color: #795d04;
+		
+		li {
+			padding: 28px 0;
+			cursor: pointer;
+			transition: all ease-out 120ms;
+            list-style: none;
+			
+			.menu_i {
+				display: block;
+				font-size: 24px;
+
+				transition: all ease 450ms;
+
+				&:active{
+					color: rgb(251, 184, 119);
+				}
+			}
+
+			
+			
+				
+		}
+		.menu_i {
+			display: block;
+			font-size: 24px;
+
+			transition: all ease 450ms;
+
+		}
+	}
+}
+
+.item_1{
+
+	font-size: 150px;
+
+}
+
+
+
+	
+
+
+
+
+
+// 사이드바 (전화메뉴)
+.sideMenu1{
+	color: black;
+  width: auto;
+  height: 18rem;
+  border-radius: 10px;
+ 
+  margin: 10%;
+  position: relative;
+  
+  // display: none;
+  box-shadow: 2px 6px 4px rgb(251, 184, 119);
+
+
+  
+
+}
+
+.sideMenu1 .sideMenu1_logo {
+ font-size: 80px;
+ margin-left: 36%;
+ margin-top: 10%;
+ color: rgb(234, 173, 112);
+
+  
+ 
+
+  
+ 
+}
+
+.sideMenu1 .sideMenu1_btn1{
+
+  font-size: 30px;
+  width: 25%;
+ 
+  background-color: rgba(245, 245, 220, 0.614);
+  color: rgb(234, 173, 112);
+
+  border-radius: 10px;
+  box-shadow: 1px 4px 4px rgb(251, 184, 119);
+
+  
+}
+
+
+.sideMenu1 .sideMenu1_btn2{
+
+  font-size: 30px;
+  background-color: rgba(245, 245, 220, 0.614);
+  color: rgb(234, 173, 112);
+  border-radius: 10px;
+  box-shadow: 1px 4px 4px rgb(251, 184, 119);
+}
+
+
+
+.sideMenu1 .sideMenu1_btn1:hover{
+	color: green; //메뉴 안 요소 hover
+  background-color: white;
+  
+  }
+
+.sideMenu1 .sideMenu1_btn2:hover{
+    color: red; //메뉴 안 요소 hover
+    background-color: white;
+   
+    }  
+
+    
+
+
+
+/* //not/Ready 토글 버튼 */
+
+.InBound, .OutBound{
+  font-size: 13px;
+  color: #795d04;
+  outline: none;
+  background-color: white;
+  border-radius: 20px;
+  width: 70px;
+  height: 40px;
+  visibility: visible;
+  
+  
+  box-shadow: 2px 6px 4px rgb(251, 184, 119);
+  }
+
+// in/out ////////////////////////////////////////////
+
+.Ready{
+  font-size: 13px;
+  color: #795d04;
+  outline: none;
+  background-color: white;
+  border-radius: 20px;
+  width: 70px;
+  height: 40px;
+  visibility: visible;
+  
+  
+  box-shadow: 2px 6px 4px rgb(251, 184, 119);
+}
+
+
+
+
+main {
+	height: 150px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	time {
+		display: block;
+		width: 310px;
+		text-align: center;
+		color: white;
+		font-size: 4rem;
+		font-weight: 900;
+		text-align: center;
+	}
+	
+	button {
+		padding: .5em 1.25em;
+		position: absolute;
+		bottom: 0;
+		color: white;
+		border: 1px solid white;
+		border-radius: .5em;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+	}
+	
+	#toggle {right: 0}
+	#clear {
+		transition: all 300ms cubic-bezier(.4,.25,.3,1);
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		&[data-state='visible'] {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+	
+}
+
+.output{
+  font-style: italic;
+}

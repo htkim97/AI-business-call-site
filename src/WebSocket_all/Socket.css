@@ -1,0 +1,33 @@
+
+
+button{
+ width: 100px;
+  margin: 4px 4px 4px 4px;
+ 
+
+}
+button:disabled {
+  background-color: dimgrey;
+}
+
+.log-outer {
+  position:absolute;
+  bottom:0;
+  height:176px;
+  width:100%;
+  left:0;
+  right:0;
+  background-color:gray;
+  border:1px solid #666;
+}
+#logDiv{
+  position:absolute;
+  bottom:0;
+  height:150px;
+  width:99%;
+  background-color:#bbb;
+  overflow-y:scroll;
+  font-size:11px;
+  margin-left:5px;
+  margin-bottom:5px;
+} 

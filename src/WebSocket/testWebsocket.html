@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+     <meta charset="utf-8">
+    <title>Agent Softphone with WebSocket</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    
+
+   
+    <script>
+        
+
+setTimeout(function(){
+  var wsInfo = document.getElementById('ws-info');
+  if(wsInfo){
+    var msg = '<span style="color:red">[Error] No WebSocket Available!!</span>';
+    if(WebSocket){
+      if(WebSocket.__flash) msg = '<span style="color:olive">Using Flash WebSocket (5002)</span>';
+      else msg = '<span style="color:green">Using Native WebSocket (5002)</span>';
+    }
+    wsInfo.innerHTML = msg;
+  }
+},500);
+document.addEventListener("init-capi", function(e) {
+  WindowLoad();
+});
+function init_1(){
+  setTimeout(function(){
+    document.dispatchEvent(new CustomEvent("init-capi"));
+  },100);
+}
+
+    </script>
+
+
+<script type="text/javascript" src="http://cc.intelloid.click:5001/lib/Stately.js"></script>
+<script type="text/javascript" src="http://cc.intelloid.click:5001/customEvent.js"></script>
+<script type="text/javascript" src="http://cc.intelloid.click:5001/wsApp.js"></script>
+<script type="text/javascript" src="http://cc.intelloid.click:5001/wsCapi.js"></script>
+<script type="text/javascript" src="http://cc.intelloid.click:5001/wsStt.js"></script>
+</head>
+<body id='body' leftmargin="5" topmargin="5" style=background-color:#F5F5F5 OnLoad="init_1()" OnUnload="WindowClose()">
+  
+
+
+      <button id="Login" onClick="EE('login')" disabled>로그인</button>
+      <span style=width:10px>|</span>
+      <button id="Logout" onClick="EE('logout')" disabled>로그아웃</button>
+      <span style=width:10px>|</span>
+      <button id="NotReady" onClick="EE('notReady')"disabled>NotReady</button>
+      <span style=width:10px>|</span>
+      <button id="Inbound" onClick="EE('ibMode')"disabled>IB모드</button>
+      <span style=width:10px>|</span>
+      <button id="Outbound" onClick="EE('obMode')"disabled>OB모드</button>
+      <label for="tel">전화번호</label>
+      <input id="tel" />
+      <button id="Dial" onClick="EE('dial')"disabled>다이얼</button>
+      <span style=width:10px>|</span>
+      <button id="Hangup"onClick="EE('hangup')"disabled>끊기/거절</button>
+      <span style=width:10px>|</span>
+     
+</body>
+
+</html>

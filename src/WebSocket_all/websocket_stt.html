@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<HTML lang="ko">
+
+
+<HEAD>
+  <meta charset="utf-8">
+  <title>Agent Softphone with WebSocket</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="./Socket.css" />
+
+  <script>
+  	
+    setTimeout(function(){
+      var wsInfo = document.getElementById('ws-info');
+      if(wsInfo){
+        var msg = '<span style="color:red">[Error] No WebSocket Available!!</span>';
+        if(WebSocket){
+          if(WebSocket.__flash) msg = '<span style="color:olive">Using Flash WebSocket (5002)</span>';
+          else msg = '<span style="color:green">Using Native WebSocket (5002)</span>';
+        }
+        wsInfo.innerHTML = msg;
+      }
+    },500);
+    document.addEventListener("init-capi", function(e) {
+      WindowLoad();
+    });
+    function init(){
+      setTimeout(function(){
+        document.dispatchEvent(new CustomEvent("init-capi"));
+      },100);
+    }
+  </script>
+
+  
+  <!--<script type="text/javascript" src="iefix.js"></script>-->
+  <!--[if lte IE 10 ]>
+    <script type="text/javascript">
+      WEB_SOCKET_SWF_LOCATION = "wsf/WebSocketMain.swf"; // Let the library know where WebSocketMain.swf is.
+      console.log('IE10 or Under');
+    </script>
+    <script type="text/javascript" src="wsf/swfobject.js"></script>
+    <script type="text/javascript" src="wsf/web_socket.js"></script>
+  <![endif]-->
+<script type="text/javascript" src="../WebSocket_all/lib/Stately.js"></script>
+<script type="text/javascript" src="../WebSocket_all/CustomEvent.js"></script>
+<script type="text/javascript" src="../WebSocket_all/wsCapi.js"></script>
+<script type="text/javascript" src="../WebSocket_all/wsApp.js"></script>
+
+
+</HEAD>
+
+<BODY id='body' leftmargin="5" topmargin="5" style="background-color:#F5F5F5" OnLoad="init()" OnUnload="WindowClose()">
+
+  <!-- ############################################ -->
+  <!-- #############   UI Elements   ############## -->
+  <!-- ############################################ -->
+
+  <BUTTON id='Login'      onClick="EE('login')"    disabled>   로그인   </BUTTON>
+  <BUTTON id='Logout'     onClick="EE('logout')"   disabled>   로그아웃 </BUTTON>
+  <span style="width:10px;">|</span>
+  <BUTTON id='NotReady'   onClick="EE('notReady')" disabled>   NotReady </BUTTON>
+  <span style="width:10px;">|</span>
+  <BUTTON id='Inbound'    onClick="EE('ibMode')"   disabled>   IB모드   </BUTTON>
+  <BUTTON id='Outbound'   onClick="EE('obMode')"   disabled>   OB모드   </BUTTON>
+  <BUTTON id='Campaign'   onClick="EE('cmMode')"   disabled>   캠페인   </BUTTON>
+  <BR/>
+  <BR/>
+
+  <HR>
+  <LABEL for='tel'>전화번호</LABEL><INPUT id='tel'>
+  <BUTTON id='Dial'    onClick="EE('dial')"   disabled>   다이얼       </BUTTON>
+  <BUTTON id='Hangup'  onClick="EE('hangup')" disabled>   끊기/거절    </BUTTON>
+  <BUTTON id='Record'  onClick="EE('record')" disabled>   부분녹취 시작</BUTTON>
+  <a href="#" id='getText' onClick="getRecentCallText()">   최근통화 조회</a>
+  <br/>
+
+  <HR>
+  <BUTTON id='Answer'  onClick="EE('answer')" disabled>    전화받기 </BUTTON>
+  <BUTTON id='QPickup'  onClick="EE('qpickup')" disabled>    Q당겨받기 </BUTTON>
+  <br/>
+
+  <HR>
+  <BUTTON id="TransferCold"   onClick="EE('transferCold')" disabled>   Cold호전환  </BUTTON>
+  <BUTTON id="TransferWarm"   onClick="EE('transferWarm')" disabled>   Warm호전환  </BUTTON>
+  <BUTTON id="Transfer"       onClick="EE('transfer')"     disabled>   Attend호전환</BUTTON>
+  <BUTTON id="TxComplete"     onClick="EE('txComplete')"   disabled>   전환완료    </BUTTON>
+  <BUTTON id="TxCancel"       onClick="EE('txCancel')"     disabled>   전환취소    </BUTTON>
+  <BUTTON id="TxToggle"       onClick="EE('txToggle')"     disabled>   화자전환    </BUTTON>
+  <BUTTON id="Tx3Connect"     onClick="EE('tx3Connect')"   disabled>   3자통화     </BUTTON>
+|
+  <BUTTON id="StartAF"     onClick="EE('startAudioFork')"   disabled>   STT시작  </BUTTON>
+  <BUTTON id="StopAF"      onClick="EE('stopAudioFork')"    disabled>   STT정지  </BUTTON>
+  
+  <BR/>
+
+  <HR>
+  <BUTTON id="Hold"      onClick="EE('hold')"    disabled>   홀드      </BUTTON>
+  <BUTTON id="Away"      onClick="EE('away')"    disabled>   자리비움   </BUTTON>
+  <BUTTON id="Rest"      onClick="EE('rest')"    disabled>   휴식      </BUTTON>
+  <BUTTON id="Lunch"     onClick="EE('lunch')"   disabled>   식사      </BUTTON>
+  <BUTTON id="Meeting"   onClick="EE('meeting')" disabled>   회의      </BUTTON>
+  <BUTTON id="Seminar"   onClick="EE('seminar')" disabled>   교육      </BUTTON>
+  <BUTTON id="Etc"       onClick="EE('etc')"     disabled>   기타      </BUTTON>
+  <BUTTON id="Board"     onClick="EE('board')"   disabled>   게시판    </BUTTON>
+  <BUTTON id="Chat"      onClick="EE('chat')"    disabled>   채팅      </BUTTON>
+  <BUTTON id='GetState'  onClick="EE('getState')" style="display:none"> 상태체크 </BUTTON>
+  <BR/>
+
+  <BUTTON onClick="EE('getTeamAgents')"   style="display:none">  팀멤버   </BUTTON>
+  <BUTTON onClick="EE('getGroupAgents')"  style="display:none">  그룹멤버 </BUTTON>
+  <BUTTON onClick="EE('getCenterAgents')" style="display:none">  전체멤버 </BUTTON>
+
+
+  <BUTTON id='QueueAdd'    onClick="EE('queueAdd')"   style="display:none"> 큐로그인   </BUTTON>
+  <BUTTON id='QueueSub'    onClick="EE('queueSub')"   style="display:none"> 큐로그아웃 </BUTTON>
+  <BUTTON id='QueueRun'    onClick="EE('queueRun')"   style="display:none"> 큐활성화   </BUTTON>
+  <BUTTON id='QueuePause'  onClick="EE('queuePause')" style="display:none"> 큐비활성화 </BUTTON>
+  <BUTTON id='QueueState'  onClick="EE('queueState')" style="display:none"> 큐상태체크 </BUTTON>
+
+  <HR>
+  <BUTTON id='IvrSsn'  onClick="EE('ivrSsn')"     disabled> 주민번호받기 </BUTTON>
+  <BUTTON id='IvrAcc'  onClick="EE('ivrAccount')" disabled> 계좌번호받기 </BUTTON>
+  <BUTTON id='IvrRet'  onClick="EE('ivrReturn')"  disabled> IVR전환취소  </BUTTON>
+  <BR/>
+ 
+  <DIV style="display:none">
+  <INPUT id='js2vb' size="100">  VB로 명령/메시지 전달<BR>
+  <INPUT id='vb2js' size="100" onchange="vbEvent()">  VB에서 메시지 받음<BR>
+  <DIV id='custEv' style='display:none'></DIV>
+ </DIV>
+
+  <DIV id='queue-DIV'>
+  </DIV>
+
+  <DIV style='position:fixed;top:5px;right:5px;height:100;width:400;border:1px solid green;font-size:11px;'>
+  <TABLE style="width:480px;text-align:center" border="1px">
+     <TR>
+      <TH>상담원</TH><TH>전화기</TH><TH>모드</TH><TH>상태</TH><TH>세션</TH><TH>갱신</TH><TH>호타입</TH>
+     </TR>
+    <TR>
+      <TD style='color:blue' onClick='changeAgent()' id='userid'>1600</TD>
+      <TD style='color:blue' onClick='changePhone()' id='phone'>1600</TD>
+      <TD id='mode'>Logout</TD>
+      <TD id='state'>Idle</TD>
+      <TD id='session'>None</TD>
+      <TD id='time'>00:00:00</TD>
+      <TD id='call_type'>Idle</TD>
+     </TR>
+     <TR>
+       <TD colspan="7" id='ws-info'>Using WebSocket (5002)</TD>
+     </TR>
+  </TABLE>
+  </DIV>
+
+  <DIV style='width:100%;border:1px solid ;font-size:11px;'>
+    <TABLE style="width:100%;text-align:left" border="1px" id="txtCnts">
+      <!--
+       <TR>
+        <TH>전화번호(cid)</TH><TH>콜ID(uid)</TH><TH>시각</TH><TH>내용</TH>
+       </TR>
+      <TR>
+        <TD id='txt_cid'></TD>
+        <TD id='txt_uid'></TD>
+        <TD id='txt_time'>00:00:00</TD>
+        <TD id='txt_cnts'></TD>
+       </TR>
+       -->
+    </TABLE>
+    </DIV>
+</BODY>
+
+</HTML>
