@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, {useEffect, useState, useRef} from 'react';
+
+import React, {useState, useRef} from 'react';
 import Modal from '../../Modal';
 import Up from './Up';
 

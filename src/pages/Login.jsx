@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import '../CSS/login.scss'
+import '../CSS/Login.scss'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";

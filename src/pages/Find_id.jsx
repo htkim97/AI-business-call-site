@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import {Grid} from 'rsuite';
-import '../CSS/login.scss';
+import '../CSS/Login.scss';
 const Find_id =()=>{
     return (
         <Grid className='login'>
